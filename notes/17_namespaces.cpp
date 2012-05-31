@@ -65,3 +65,10 @@ namespace RatADT {
 //  * Local declarations supersede them
 //  * Can have ambiguous names if member of multiple namespaces are made visible with using directives
 /* snip */
+// Note on etiquette:
+// 
+// ** never use *using* directives**
+// * inisde a header
+//      * it will include it for everything that uses the header. It will make the namespace basically global. It'll blow upd ependencies, and stuff will break.
+// * before #include directive
+//      * It will mess up the namespaces of the included files.
