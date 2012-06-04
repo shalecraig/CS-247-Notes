@@ -4,7 +4,7 @@
 // 
 // >- int, float, bool, string, AccountNo, Date
 // 
-// >- can always change the value ofa  varaible through assignment
+// >- can always change the value of a varaible through assignment
 // 
 // - Mutable ADTs tend to reflect real-world entries
 // 

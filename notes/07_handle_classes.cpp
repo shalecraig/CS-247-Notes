@@ -16,6 +16,7 @@ public:
     int denominator() const;
 private:
     struct impl;
+    // PIMPL example
     impl *rat_;
 public:
     
@@ -62,7 +63,7 @@ Rational::Rational(const Rational& r) {
 
 // Copy example (deep);
 Rational& operator=(const Rational& r) {
-    if (&r = this) {
+    if (&r == this) {
         return *this;
     }
     delete rat_;

@@ -49,7 +49,7 @@ class Rational {
     friend Complex Complex:: operator++(const Complex & ) const;
         // The method below is allowed to modfiy all variables and call all methods.
     friend istream& operator>> (istream& si, Rational &);
-}
+};
 
 istream& operator>> (istream & sin, Rational& r) {
     char slash;
