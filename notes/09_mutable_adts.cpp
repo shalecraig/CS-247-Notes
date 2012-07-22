@@ -15,11 +15,11 @@
 // -----------------------------------------------
 /* snip */
 //Rational example:
-Rational r; // 0/1
-Rational s(r); // 0/1
-cin >> r; // 10/1
-// if Rational is mutable: r = 10/1, s = **10**/1
-// 
+Rational r; // r is set to: 0/1
+Rational s(r); // s is set to: 0/1
+cin >> r; // input 10/1
+// if Rational is mutable, we have r = 10/1, s = **10**/1
+//
 // if Rational is immutable: r = 10/1, s = **0**/1
 cout << "r= " << r << ", s ="<< s << endl;
 /* snip */
@@ -28,9 +28,9 @@ cout << "r= " << r << ", s ="<< s << endl;
 // Person example (Java example)
 // 
 Person myperson("Danny O'Leary", new Date(1));
-cout << myperson.DOB() << endl;
+System.out.println(myperson.DOB().toString());
 Date mydate = myperson.DOB();
-myDate.monthIs(myDate.Month() + 1);
+myDate.setMonth(myDate.Month() + 1);
 // this call can be problematic if multiple variables share the same mutable object
 cout << myperson.DOB(); 
 /* snip */
@@ -52,3 +52,5 @@ cout << myperson.DOB();
 // 
 // 7. data members are immutable, or assign to copies of values
 // 
+// 
+// **Basically, immutable adts cannot be changed**

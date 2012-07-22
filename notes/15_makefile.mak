@@ -63,7 +63,7 @@ EXEC = program
 
 ${EXEC} : ${OBJECTS}
 	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
-# separate target; cleans directory of all temp files.
+# separate make target; cleans directory of all temp files.
 clean: 
 	rm -rf ${DEPENDS} ${OBJECTS} ${EXEC}
 # reads the .d ﬁles and re-runs the make with dependencies

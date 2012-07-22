@@ -1,8 +1,8 @@
-// Summary of ADT design decisions
+// Summary of ADT design decisions (what we need to explicitly choose to do)
 // 
 // * Legal Values, legal Default value?
 // 
-// * Explicit constructors
+// * using the explicit keyword in constructors
 // 
 // * Accessors, mutators
 // 
@@ -14,26 +14,26 @@
 // 
 // * member v.s.. non-member methods
 // 
-// * essential methods (our or the compiler's)
+// * essential methods (using ours or the compiler's)
 // 
-// * mutattable or immutatable ADT
+// * using a mutattable or immutatable ADT
 // 
 // * information hiding
 // 
 // -----------------------------------------------
 /* top */
 // 
-// *It looks like we're going to make a* **money ADT**
+// * We're designing a **money ADT**
 // 
-// *Requirements*
+// *Requirements:*
 // 
-// * Must have up to two decimal places
+// * Must hold place value of up to two decimal places
 // 
-// * Positive,negative values
+// * Must hold positive and negative values
 // 
-// * currency
+// * Must hold the currency
 // 
-// * very large values with perfect precision
+// * Must hold very large values with perfect precision (loss of precision would result in $10^100 + $1 = $10^100)
 // 
 // Data Representation:
 // 
@@ -41,11 +41,11 @@
 // 
 //   * Keep an integer value
 // 
-//   * Array of digits
+//   * Possibly an array of digits
 // 
 // Default Constructor, copy constructor
 // 
-// * define constructor
+// * define the constructor:
 // 
 //   * int -> Money
 // 
@@ -64,10 +64,9 @@
 // 
 /* Money ADT */
 //   * operator* : Money * Rational
-/* nonmember */
+/* nonmember functions/methods: */
 // 
 //   * Operator >>, Operator<< ==, !=, >, >=, <, <=
-/* nonmember */
 // 
 //   * Copy constructor, operator=
 // 

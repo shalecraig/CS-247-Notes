@@ -19,6 +19,7 @@
 //   - (i.e. int.tofloat, etc).
 //   
 //   - Protected with namespaces, or as private members if appropriate.
+// ------------------------------------------------
 /* snip */
 
 // Usually, this in the header file for some class of code:
@@ -53,8 +54,8 @@ class Rational {
 
 istream& operator>> (istream & sin, Rational& r) {
     char slash;
-    // We're going to read from sin to the rational (that we're creating)
+    // We're going to read from *sin* to create the rational object. We can access num_ because we're a friend.
     sin >> r.num_ >> slash >> r.denom_;
-    // Then, we return the istream (the rational that was referenced is pointed to & is modified);
+    // We return the istream (the rational was a reference, and was modified that way);
     return sin;
 }

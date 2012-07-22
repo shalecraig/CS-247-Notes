@@ -5,8 +5,8 @@
 <span class="o">----------------------------------------------</span>
 <span class="o">|</span> <span class="n">fields</span>                                     <span class="o">|</span>
 <span class="o">----------------------------------------------</span>
-<span class="o">|</span> <span class="o">+</span> <span class="n">functions</span>                                <span class="o">|</span>
-<span class="o">----------------------------------------------</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>In functions, there are different shapes that indicate public/private/etc:</p>
+<span class="o">|</span> <span class="o">+</span> <span class="n">operations</span>                                <span class="o">|</span>
+<span class="o">----------------------------------------------</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>In operations, there are different shapes that indicate public/private/etc:</p>
 
 <ul>
 <li><p>+ public</p></li>
@@ -27,4 +27,34 @@
 
 <hr />
 
-<p><strong><em>Multiplicity</em></strong></p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
+<h2>UML:</h2>
+
+<ul>
+<li><p>Boxes:</p>
+
+<ul><li><p>name</p></li>
+<li><p>fields</p></li>
+<li><p>operations</p></li></ul></li>
+<li><p>Associations (arrows)</p>
+
+<ul><li><p>Show that two items are "connected", or "associated" with each other.</p></li>
+<li><p>Multiplicities - constrain the number of allowable links in an association (1..m &lt;=&gt; 0&le;n&le;m)</p></li>
+<li><p>Association class - link attributes (i.e. link members passed between one class and another)</p></li></ul></li>
+<li><p>Aggregation (clear diamonds)</p>
+
+<ul><li>"Part of" relation between an aggregate (collection) and its members. ("Purchase Order" has an aggregation of "products")</li></ul></li>
+<li><p>Composition (opaque diamonds)</p>
+
+<ul><li>"Part of" relation between a composite object and its components. ("catalog item" is part of a "catalog")</li></ul></li>
+<li><p>Generalization (clear triangles):</p>
+
+<ul><li>Sub-type (parent/child class relationship)</li></ul></li>
+</ul>
+
+<hr />
+
+<h2>UML:</h2>
+
+<ul>
+* 
+</ul>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

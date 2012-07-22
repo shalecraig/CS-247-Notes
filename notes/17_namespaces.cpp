@@ -14,12 +14,12 @@ namespace Lib1 {
 namespace Lib2 {
     void f();
     void g() {
-        // this will call Lib2's method, not Lib1's method
+        // calls Lib2's method (not Lib1's method)
         f();
     }
     void h() {
         // Qualifies the namespace of the method you are calling
-        // -> this will call the Lib1 Method
+        // -> calls Lib1's Method
         Lib1::f();
     }
 }
@@ -27,8 +27,9 @@ namespace Lib2 {
 // Can re-open the namespace in other files. Ex:
 
 /* new file */
+// ----------------------------------------
 namespace Lib1 {
-    // new method defined in a the file.
+    // new method defined in the file.
     herpDerpMcGurp();
 }
 
@@ -50,13 +51,12 @@ namespace RatADT {
 /* snip */
 // Referenceing namespace members:
 // 
-// * Using declaration
+// * Using declarations will add Rational to the visible namespace
 // 
-//          Using RatADT:: Rational;
+//          Using RatADT::Rational;
 //        
-//      This adds Rational visible from the namespace
-//  * Makes Rational visible or a name in current scope
-//  * Will clash with local names
+// * Makes Rational visible or a name in current scope
+// * Will clash with local names
 // * Using directive:
 // 
 //          Using namespace RatADT;
@@ -67,8 +67,12 @@ namespace RatADT {
 /* snip */
 // Note on etiquette:
 // 
-// ** never use *using* directives**
+// **don't use "using":**
+// 
 // * inisde a header
-//      * it will include it for everything that uses the header. It will make the namespace basically global. It'll blow upd ependencies, and stuff will break.
-// * before #include directive
+// 
+//      * it will be included for everything *importing* the header, making the namespace basically global. Stuff will break.
+//      
+// * before an #include directive:
+// 
 //      * It will mess up the namespaces of the included files.

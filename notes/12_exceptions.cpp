@@ -1,4 +1,4 @@
-// RationalExeptional.cpp
+// RationalExeption.cpp
 //------------------------------------
 Rational operator* (const Rational &r, const Rational &s) {
     long numer = (long)r.numerator()   * (long) s.numerator();
@@ -17,7 +17,8 @@ Rational operator* (const Rational &r, const Rational &s) {
     }
 }
 
-// RationalExeptional.cpp
+//------------------------------------
+// RationalExeption.cpp
 //------------------------------------
 
 Rational::Rational(int num, int denom): _n(1), _d(1) {
@@ -36,8 +37,8 @@ Rational::Rational(int num, int denom): _n(1), _d(1) {
     /* ... */
 }
 
-// somewhere else...
 //------------------------------------
+// **Example of this being used**
 
 int main() {
     Rational r(1, 2);
@@ -45,7 +46,7 @@ int main() {
         cout << "Enter rational number (a/b). " << endl;
         cin >> r;
     } catch (DivideByZeroException &e) {
-        cout << e.numer() << "/0 is not a legal value, dickhead."<< endl;
+        cout << e.numer() << "Rational numbers cannot have 0 in the denominator, doofus."<< endl;
     }
 }
 
@@ -67,41 +68,44 @@ int main() {
     } catch (X::Small &) {
         cout << "Small Trouble" << endl;
     } catch (X::Trouble &) {
-        // This will be triggered, because a big (thrown error) is a Trouble.
+        // This exception will be the one triggered, because the error thrown (Big) is a child of Trouble, and it is the first caught type that matches.
         cout << "Trouble" << endl;
     } catch (X::Big &) {
         cout << "Big Trouble" << endl;
+        // This is a catch-all
     } catch (...) {
         cout << "catches any exception" << endl;
-        // This re-throws the same exception.
+        // Re-throws the same exception.
         throw;
     }
 }
 
+// -----------------------------------
 // Exception specifications:
 // -----------------------------------------------------------------------------------
 class foo{
-    // Specifies that it can throw a DivideByZero exception, or an OverFlow Exception
+    // Explicitly declares it can only throw a DivideByZero exception, or an OverFlow Exception
     // 
-    // If an error that is not specified in the list is thrown, it generates a runtime error
+    // Errors not specified in the list generate runtime errors
     double safeDivide (int n, int d) throw (DivideByZero, OverFlow);
-    // no specification for exceptions
+    // no specification for exceptions -> no limitations of what it can throw.
     void f();
-    // promises that no exceptions will be thrown.
+    // This promises that no exceptions will be thrown.
     void g() throw()
 };
 
+// -----------------------------------
 // **Standard/predefined exceptions**
 // -----------------------------------
 
-// This code needs #include <stdexcept>
+// This code needs a *#include &lt;stdexcept&gt;*
 class runtime_error: public exception {
 public:
     explicit runtime_error (const string& what_arg);
     // inherits virtual const char* what() const throw();
 };
 
-// Unwinding the stack:
+// When unwinding the stack:
 // 
 // - objects on the stack are deallocated automatically invoking the appropriate destructor
 // 
@@ -113,22 +117,21 @@ public:
 // 
 // Resource allocation is Initialization idiom:
 // 
-// - equates resource management as object lifetime:
+// equates resource management as object lifetime
+/* snip */
 //
-//   - construction
-// 
-//   - destruction
-
 class Resource {
     resource_type * r_;
+//  construction
     resource_type* acquire (parms p);
+//  destruction
     void release (resource_type *);
 public:
+    // Calls acquire(p)
     Resource(parms p) : r_ (acquire(p));
+    // Calls release(p)
     ~Resource() {release(r_);}
-    // accessors, mutators...
-    // 
-    // think about preventing copy assignment
+    // sometimes prevent copy assignment when using this.
 };
 
 // ----------------------------------
@@ -142,6 +145,6 @@ class file {
     file & operator= (const file&);
 public:
     file(const char* name) : file_(std::fopen(name, "w+")) {
-        // Check if successful.
+        /* Check if open was successful. */
     }
 }

@@ -11,19 +11,18 @@
 
 <span class="k">namespace</span> <span class="n">Lib2</span> <span class="p">{</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
-    <span class="kt">void</span> <span class="n">g</span><span class="p">()</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>this will call Lib2's method, not Lib1's method</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="n">f</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="n">g</span><span class="p">()</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>calls Lib2's method (not Lib1's method)</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="n">f</span><span class="p">();</span>
     <span class="p">}</span>
     <span class="kt">void</span> <span class="n">h</span><span class="p">()</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Qualifies the namespace of the method you are calling
--> this will call the Lib1 Method</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="n">Lib1</span><span class="o">::</span><span class="n">f</span><span class="p">();</span>
+-> calls Lib1's Method</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="n">Lib1</span><span class="o">::</span><span class="n">f</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cm">/* snip */</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Can re-open the namespace in other files. Ex:</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/* new file */</span>
-<span class="k">namespace</span> <span class="n">Lib1</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>new method defined in a the file.</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="n">herpDerpMcGurp</span><span class="p">();</span>
+<span class="cm">/* snip */</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Can re-open the namespace in other files. Ex:</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/* new file */</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <hr />             </td>             <td class="code">               <div class="highlight"><pre><span class="k">namespace</span> <span class="n">Lib1</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>new method defined in the file.</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="n">herpDerpMcGurp</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="cm">/* snip */</span>
 <span class="k">namespace</span> <span class="n">RatADT</span> <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Rational</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>Usually, we would write this to call these methods:</p>
+    <span class="k">class</span> <span class="nc">Rational</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>Usually, we would write this to call these methods:</p>
 
 <pre><code> RatADT::Rational::Rational(...) {...}
  RatADT::Rational RatADT::operator+(...) {...}
@@ -34,18 +33,15 @@
     <span class="n">Rational</span> <span class="k">operator</span><span class="o">+</span> <span class="p">(</span><span class="k">const</span> <span class="n">Rational</span> <span class="o">&amp;</span> <span class="k">const</span> <span class="n">Rational</span> <span class="o">&amp;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="cm">/* snip */</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>Referenceing namespace members:</p>
+<span class="cm">/* snip */</span></pre></div>             </td>           </tr>                               <tr id="section-8">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-8">&#182;</a>               </div>               <p>Referenceing namespace members:</p>
 
 <ul>
-<li><p>Using declaration</p>
+<li><p>Using declarations will add Rational to the visible namespace</p>
 
-<pre><code> Using RatADT:: Rational;
-</code></pre>
-
-<p>This adds Rational visible from the namespace</p>
-
-<ul><li>Makes Rational visible or a name in current scope</li>
-<li>Will clash with local names</li></ul></li>
+<pre><code> Using RatADT::Rational;
+</code></pre></li>
+<li><p>Makes Rational visible or a name in current scope</p></li>
+<li>Will clash with local names</li>
 <li><p>Using directive:</p>
 
 <pre><code> Using namespace RatADT;
@@ -54,10 +50,15 @@
 <ul><li>Makes namespace member visible as if they had been declared outside their namespace.</li>
 <li>Local declarations supersede them</li>
 <li>Can have ambiguous names if member of multiple namespaces are made visible with using directives</li></ul></li>
-</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/* snip */</span></pre></div>             </td>           </tr>                               <tr id="section-8">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-8">&#182;</a>               </div>               <p>Note on etiquette:</p>
+</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/* snip */</span></pre></div>             </td>           </tr>                               <tr id="section-9">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-9">&#182;</a>               </div>               <p>Note on etiquette:</p>
 
-<p><em>* never use *using</em> directives**
-* inisde a header
-     * it will include it for everything that uses the header. It will make the namespace basically global. It'll blow upd ependencies, and stuff will break.
-* before #include directive
-     * It will mess up the namespaces of the included files.</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
+<p><strong>don't use "using":</strong></p>
+
+<ul>
+<li><p>inisde a header</p>
+
+<ul><li>it will be included for everything <em>importing</em> the header, making the namespace basically global. Stuff will break.</li></ul></li>
+<li><p>before an #include directive:</p>
+
+<ul><li>It will mess up the namespaces of the included files.</li></ul></li>
+</ul>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

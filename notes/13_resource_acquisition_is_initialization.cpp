@@ -1,22 +1,22 @@
-// Resource Acquisition is Iniitialization (RAII) - equater resource management with object lifetime
+// Resource Acquisition is Iniitialization (RAII) - equates resource management with object lifetime
 // 
-// - resource allocated in object's constructor
+// - resource is allocated in the object's constructor
 // 
-// - resource released in object's destructor
+// - resource is released in the object's destructor
 // 
 // Smart pointer is an ADT that simulates a pointer, but uses RAII to provide other characteristics.
 // 
-// auto_ptr<> is a templated object that holds an internal pointer.
+// auto_ptr<> is a c++ stl templated object that holds an internal pointer.
 // 
-// 1. Deallocates referent automatically when scope exits
+// 1. It deallocates the referent automatically when the scope exits
 // 
-// 2. single ownership of object
+// 2. It ensures the single ownership of an object
 // 
-// 3. allows ownership to transfer among auto_ptrs
+// 3. It allows ownership to transfer among auto_ptrs
 // 
 /* code: */
 // -----------------------------------------------------------------------
-// Auto-pointer class:
+// Auto-pointer interface
 template <class X>
 class auto_ptr {
 public:
@@ -94,11 +94,11 @@ int main() {
 // 
 // 2. Use RAII to automate cleanup of local resources
 // 
-// 3. If 1) and 2) are followed religiously then only the code _handles_ an exception needs  catch it
+// 3. If 1) and 2) are followed religiously then only the code that _handles_ an exception needs to catch it
 // 
 // **Throwing an exception**
 // 
-// 1. constructors
+// 1. Constructors - dealloc the value of other parts of the object, if necessary.
 // 
 // 2. Mutators - first rollback the value of the object to initial value.
 // 
@@ -127,7 +127,7 @@ int main() {
 
 // Header file - set of declarations to be included in any module that uses declared name
 // 
-// **\#include** the header file to include external declarations in module.
+// **#include** the header file to include external declarations in module.
 // 
 // Global Declarations:
 // 

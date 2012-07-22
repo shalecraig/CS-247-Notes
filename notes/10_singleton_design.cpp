@@ -8,7 +8,7 @@ class Egg{
     // We have a singleton instance that is the single instance of the class.
     static Egg e;
     // we give the class some data
-    int i;
+    float volume;
     // Constructor, private by default (so there is only one instance of it)
     Egg(int c);
     // private, unimplemented copy constructor
@@ -18,7 +18,7 @@ public:
     static Egg * instance();
     // get i
     int val();
-}
+};
 
 // 
 // ------------------------------------------------

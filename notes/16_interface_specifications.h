@@ -1,12 +1,12 @@
-// She likes to use this nomenclature:
 
+// She likes this naming convention:
 double quotient (int numerator, int denominator);
-/ Requires: nothing (i.e. is not null/etc)
-/ Modifies: nothing
-/ Ensures: it returns a double equal to the two numbers divided.
-/ Returns: numerator / denominator
-/ Optional:
-/ [Throws: DivideByZero, if denominator = 0;]
+/* Requires: nothing (i.e. is not null/etc) */
+/* Modifies: nothing */
+/* Ensures: it returns a double equal to the two numbers divided. */
+/* Returns: numerator / denominator */
+/* Optional: */
+    /* Throws: DivideByZero if denominator = 0 */
 
 // ------------------------------------------------------
 
@@ -23,7 +23,7 @@ public:
 virtual void print() ;
     //Requires: cout open
     //modifies: cout
-    //Ensures: cout = coun @ pre + "account" + this.AcctNo + " Balance " + this.Balance;
+    //Ensures: cout = (coun @ pre) + "account" + this.AcctNo + " Balance " + this.Balance;
 };
 
 class CheapAccount : public Account {
@@ -41,4 +41,4 @@ public:
     //      minutes = 0
     //      freemin = 200
     //      rate = 1
-}
+};

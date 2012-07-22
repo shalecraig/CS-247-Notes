@@ -68,6 +68,8 @@ Rational:: Rational(int num, int denom) {
 /*snip*/
 // **Creating error objects**
 class Rational {
+    /* code for the Rational class */
+
     // Error object
     class DivideByZeroException {
         int num;
@@ -76,8 +78,9 @@ class Rational {
         int num() {
             return num_;
         }
-    }
-    public Rational(int num=0, int denom = 1); /*...*/
-    
-}
+    };
+    /*...*/
+    public Rational(int num=0, int denom = 1);
+    /*...*/
+};
 // 
